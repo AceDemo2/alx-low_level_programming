@@ -12,7 +12,7 @@ int main(void)
 
 	while (i < sizeof(ty) / sizeof(ty[0]))
 		{
-			printf("Size of a %s: %lu bytes(s)\n", ty[i], (unsigned long)sizeof(ty[i]));
+			printf("Size of a %s: %lu bytes(s)\n", ty[i], sizeof(ty[i][0]));
 			i++;
 		}
 	return (0);
