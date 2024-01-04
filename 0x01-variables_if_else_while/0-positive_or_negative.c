@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* 
- * check for positive, negative and zero
- * returns 0 on sucess
-*/
+ /*
+ * main - check for positive, negative and zero
+ * Return: returns 0 on sucess
+ */
 int main(void)
 {
 	int n;
