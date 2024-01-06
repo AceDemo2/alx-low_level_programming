@@ -15,10 +15,10 @@ void times_table(void)
 		while (j <= 9)
 		{
 			_putchar((i * j) + '0');
-			if (i = 9 && j = 9)
+			if (i == 9 && j == 9)
 				break;
 			_putchar(',');
-			if (j = 9)
+			if (j == 9)
 				_putchar('\n');
 			j++;
 		}
