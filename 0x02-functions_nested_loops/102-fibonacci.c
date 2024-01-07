@@ -20,4 +20,5 @@ int main(void)
 		l++;
 	}
 	printf("\n");
+	return (0);
 }
