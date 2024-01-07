@@ -9,11 +9,11 @@ int main(void)
 {
 	unsigned long int i = 1, j = 2, k, l = 0;
 
-	printf("%llu, %llu", i, j);
+	printf("%lu, %llu", i, j);
 	while (l < 98)
 	{
 		k = i + j;
-		printf(", %llu", k);
+		printf(", %lu", k);
 		i = j;
 		j = k;
 		l++;
