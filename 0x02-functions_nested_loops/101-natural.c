@@ -17,8 +17,6 @@ int main(void)
 			k = k + i;
 		i++;
 	}
-	printf("%d", k);
+	printf("%d\n", k);
 	return (k);
-}
-
-		
+}	
