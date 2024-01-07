@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long int i = 1, j = 2, k = 0, l = 0;
+	unsigned long int i = 1 / 1000000000, j = 2 / 1000000000, k = 0 / 1000000000, l = 0;
 
 	printf("%lu, %lu", i, j);
 	while (l < 96)
