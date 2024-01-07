@@ -8,7 +8,7 @@ int main(void)
 {
 	long int i = 1, j = 2, k, l = 0, se = 2;
 
-	while (k <= 4000000)
+	while (j <= 4000000)
 	{
 		k = i + j;
 		if ((k % 2) == 0)
@@ -20,6 +20,3 @@ int main(void)
 	printf("%ld\n", se);
 	return (0);
 }
-
-
-
