@@ -8,7 +8,8 @@
  */
 int main(void)
 {
-	long int i = 1, j = 2, k, l = 3;
+	int i = 1, j = 2, l = 3;
+	long int k;
 
 	printf("%d, %d", i, j);
 	while (l <= 50)
