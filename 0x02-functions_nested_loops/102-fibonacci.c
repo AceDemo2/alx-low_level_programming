@@ -15,7 +15,7 @@ int main(void)
 	while (l <= 50)
 	{
 		k = i + j;
-		printf(", %d", k);
+		printf(", %ld", k);
 		i = j;
 		j = k;
 		l++;
