@@ -8,8 +8,9 @@
  */
 int main(void)
 {
-	int k = 0, i;
+	int k, i;
 
+	k = 0;
 	i = 0;
 	while (i < 1024)
 	{
