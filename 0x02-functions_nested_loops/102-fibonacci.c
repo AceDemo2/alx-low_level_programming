@@ -19,5 +19,5 @@ int main(void)
 		j = k;
 		l++;
 	}
-	printf('\n');
+	printf("\n");
 }
