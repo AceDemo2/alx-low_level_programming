@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <math.h>
 
 /**
  * main - main block
@@ -9,7 +8,7 @@
  */
 int main(void)
 {
-	int k = 0, i, j;
+	int k = 0, i;
 
 	i = 0;
 	while (i < 1024)
