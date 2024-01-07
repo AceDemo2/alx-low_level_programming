@@ -14,7 +14,7 @@ int main(void)
 	while (i < 1024)
 	{
 		if ((i % 3) == 0 || (i % 5) == 0)
-			k = k + i;
+			k += i;
 		i++;
 	}
 	printf("%d\n", k);
