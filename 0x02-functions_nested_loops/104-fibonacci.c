@@ -5,7 +5,7 @@
  * followed by a new line
  * Return: ALways 0 (Success)
  */
-int main(voin)
+int main(void)
 {
 	long int i = 1, j = 2, k, l = 0;
 
@@ -19,4 +19,5 @@ int main(voin)
 		l++;
 	}
 	printf("\n");
+	return (0);
 }
