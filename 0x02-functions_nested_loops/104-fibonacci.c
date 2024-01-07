@@ -10,7 +10,7 @@ int main(void)
 	unsigned long int i = 1, j = 2, k, k1, k2, i1, j1, i2, j2, l = 0;
 
 	printf("%lu, %lu", i, j);
-	while (l < 86)
+	while (l < 89)
 	{
 		k = i + j;
 		printf(", %lu", k);
