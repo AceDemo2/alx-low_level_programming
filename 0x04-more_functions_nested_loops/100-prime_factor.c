@@ -30,7 +30,7 @@ int main(void)
     long number = 612852475143;
     long result = largest_prime_factor(number);
 
-    printf("The largest prime factor of %ld is %ld\n", number, result);
+    printf("%ld\n", result);
 
     return 0;
 }
