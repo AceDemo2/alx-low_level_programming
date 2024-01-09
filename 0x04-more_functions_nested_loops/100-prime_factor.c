@@ -9,12 +9,17 @@
  */
 int main(void)
 {
-	long int i, j = 612852475143;
+	long int i, j = 612852475143, k = 0;
 
 	for (i = 2; i <= j; i++)
 	{
 		while (j % i == 0)
+		{	
 			j /= i;
+			if (i > k)
+				l = i
+		}
+
 	}
 	printf("%ld\n", j);
 	return (0);
