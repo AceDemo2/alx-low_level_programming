@@ -13,7 +13,7 @@ int main(void)
 	for (i = 2; i <= j; i++)
 	{
 		while (j % i == 0)
-		{	
+		{
 			j /= i;
 			if (i > k)
 				k = i;
