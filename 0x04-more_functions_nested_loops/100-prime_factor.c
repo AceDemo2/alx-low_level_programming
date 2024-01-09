@@ -8,9 +8,10 @@
  */
 int main(void)
 {
-        long int i, j = 612852475143, k = 0;
+        long int i, j = 612852475143, k = 0, sq;
 
-        for (i = 2; i <= sqrt(j); i++)
+	sq = (long int)sqrt(j);
+        for (i = 2; i <= sq; i++)
         {
                 while (j % i == 0)
                 {
