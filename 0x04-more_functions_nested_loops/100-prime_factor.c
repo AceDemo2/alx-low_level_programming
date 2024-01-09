@@ -17,10 +17,10 @@ int main(void)
 		{	
 			j /= i;
 			if (i > k)
-				l = i
+				l = i;
 		}
 
 	}
-	printf("%ld\n", j);
+	printf("%ld\n", k);
 	return (0);
 }
