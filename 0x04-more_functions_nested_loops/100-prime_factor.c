@@ -13,9 +13,9 @@ int main(void)
 	sq = (long int)sqrt(j);
         for (i = 2; i <= sq; i++)
         {
-                while (j % i == 0)
+                while (sq % i == 0)
                 {
-                        j /= i;
+                        sq /= i;
                         if (i > k)
                                 k = i;
                 }
