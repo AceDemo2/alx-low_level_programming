@@ -17,7 +17,7 @@ int main(void)
 		{	
 			j /= i;
 			if (i > k)
-				l = i;
+				k = i;
 		}
 
 	}
