@@ -8,11 +8,10 @@ void print_number(int n)
 {
     if (n == INT_MIN)
     {
-        // Handle the special case of INT_MIN
         _putchar('-');
-        _putchar('2'); // Digit in the ten-millions place
-        n %= 1000000000; // Remove the ten-millions digit
-        n = -n; // Make the remaining part positive
+        _putchar('2');
+        n %= 1000000000;
+        n = -n;
     }
 
     if (n < 0)
