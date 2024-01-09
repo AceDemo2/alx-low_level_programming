@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - main block
@@ -8,16 +9,17 @@
  */
 int main(void)
 {
-        long int i, j = 612852475143;
+    long int i, j = 612852475143, k = 0;
 
-        for (i = 2; i <= j; i++)
+    for (i = 2; i <= j; i++)
+    {
+        while (j % i == 0)
         {
-                while (j % i == 0)
-                {
-                        j /= i;
-                }
-
+            j /= i;
+            if (i > k)
+                k = i;
         }
-        printf("%ld\n", i);
-        return (0);
+    }
+    printf("%ld\n", k);
+    return (0);
 }
