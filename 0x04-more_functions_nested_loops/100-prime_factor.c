@@ -16,6 +16,6 @@ int main(void)
 		while (j % i == 0)
 			j /= i;
 	}
-	printf("%ld", j);
+	printf("%ld\n", j);
 	return (0);
 }
