@@ -16,6 +16,6 @@ int main(void)
 		while (j % i == 0)
 			j /= i;
 	}
-	putchar(j + '0')
+	putchar(j + '0');
 	return (0);
 }
