@@ -7,13 +7,14 @@
  */
 void puts_half(char *str)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, k;
 
 	while (str[i])
 		i++;
 	while (j < i / 2)
 		j++;
-	while (str[j])
+	k = j++;
+	while (str[j] && str[k])
 	{
 		if (i % 2 == 0)
 		{
@@ -22,9 +23,8 @@ void puts_half(char *str)
 		}
 		else
 		{
-			j++;
-			_putchar(str[j]);
-			j++;
+			_putchar(str[k]);
+			k++;
 		}
 	}
 	_putchar('\n');
