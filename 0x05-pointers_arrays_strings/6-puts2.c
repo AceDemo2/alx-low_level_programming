@@ -10,9 +10,7 @@ void puts2(char *str)
 {
 	int i = 2;
 	
-	if (!str)
-		_putchar('\n');
-	else
+	if (str != NULL)
 	{
 		_putchar(str[0]);
 		while (str[i] != '\0')
