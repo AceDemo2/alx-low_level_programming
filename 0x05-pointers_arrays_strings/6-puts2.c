@@ -10,7 +10,7 @@ void puts2(char *str)
 {
 	int i = 1;
 
-	_pucthar(str[0]);
+	_putchar(str[0]);
 	while (str[i] != '\0')
 	{
 		if (str[i - 1] == '\0')
