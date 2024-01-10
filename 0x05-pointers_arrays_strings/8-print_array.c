@@ -21,7 +21,7 @@ void print_array(int *a, int n)
 		{
 			printf("%d, ",a[j]);
 			j++;
-			n--
+			n--;
 		}
 		printf("%d\n", a[j]);
 	}
