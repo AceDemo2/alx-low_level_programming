@@ -8,8 +8,9 @@
  */
 void puts2(char *str)
 {
-	int i = 0;
+	int i = 1;
 
+	_pucthar(str[0]);
 	while (str[i] != '\0')
 	{
 		if (str[i - 1] == '\0')
