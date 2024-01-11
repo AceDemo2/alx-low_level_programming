@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <limits.h>
 /**
  * generate_password - Generate a random password with a random length.
  *
