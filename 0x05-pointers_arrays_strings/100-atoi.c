@@ -4,21 +4,39 @@
  * _atoi - Convert a string to an integer.
  * @s: The pointer to convert
  *
- * Return: A integer
+ * Return: An integer
  */
 int _atoi(char *s)
 {
-	int i = 0, j = 0, k = 1;
+    int result = 0;
+    int sign = 1; // 1 represents positive, -1 represents negative
 
-	while (s[i])
-	{
-		if (s[i] == '-')
-			k = -k;
-		if (s[i] <= '0' || s[i] >= '9')
-			break;
-		else
-			j = j * 10 + (s[i] - '0');
-		i++;
-	}
-	return (j * k);
+    while (*s)
+    {
+        if (*s == '-')
+        {
+            sign = -sign; // Toggle the sign on encountering a minus sign
+        }
+        else if (*s >= '0' && *s <= '9')
+        {
+            int digit = *s - '0';
+
+            // Check for overflow before updating result
+            if (result > (INT_MAX - digit) / 10)
+            {
+                return (sign == 1) ? INT_MAX : INT_MIN; // Handle overflow
+            }
+
+            result = result * 10 + digit;
+        }
+        else if (*s != ' ')
+        {
+            break; // Stop if a non-numeric character is encountered
+        }
+
+        s++;
+    }
+
+    return result * sign;
 }
+
