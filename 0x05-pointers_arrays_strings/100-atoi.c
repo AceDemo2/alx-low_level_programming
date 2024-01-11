@@ -1,5 +1,5 @@
 #include "main.h"
-#include <limits.h>
+
 /**
  * _atoi - Convert a string to an integer.
  * @s: The pointer to convert
@@ -8,33 +8,25 @@
  */
 int _atoi(char *s)
 {
-    int result = 0;
-    int sign = 1;
+    int i = 0, j = 0, k = 1;
 
-    while (*s)
+    while (s[i])
     {
-        if (*s == '-')
+        if (s[i] == '-')
         {
-            sign = -sign;
+            k = -k;
         }
-        else if (*s >= '0' && *s <= '9')
-        {
-            int digit = *s - '0';
-            if (result > (INT_MAX - digit) / 10)
-            {
-                return (sign == 1) ? INT_MAX : INT_MIN;
-            }
-
-            result = result * 10 + digit;
-        }
-        else if (*s != ' ')
+        if (s[i] < '0' || s[i] > '9')
         {
             break;
+ 	}
+        else
+        {
+            j = j * 10 + (s[i] - '0');
         }
-
-        s++;
+        i++;
     }
 
-    return result * sign;
+    return (j * k);
 }
 
