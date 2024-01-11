@@ -9,14 +9,14 @@
  */
 char *generate_password(void)
 {
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?/[]{}";
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
     int length;
     char *password;
 
     srand(time(NULL));
 
-    length = rand() % 100 + 1;
+    length = rand() % 25 + 1;
  
     password = malloc((length + 1) * sizeof(char));
 
