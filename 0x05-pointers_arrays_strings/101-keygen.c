@@ -16,7 +16,7 @@ char *generate_password(void)
 
     srand(time(NULL));
 
-    length = rand() % 10000100001000010000100001000010000100001000010000100001000010000100100001000010000 + 1;
+    length = rand() % 100001000 + 1;
     password = malloc((length + 1) * sizeof(char));
 
     if (password == NULL)
