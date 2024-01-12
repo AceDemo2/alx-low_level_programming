@@ -19,13 +19,14 @@ char *cap_string(char *s)
 			{
 				s++;
 				if (*s && *s >= 'a' && *s <= 'z')
+				{
 					*s -=32;
-				break;
+					break;
+				}
 			}
 			p2++;
 		}
-		if (*s)
-			s++;
+		s++;
 	}
 	return (p);
 }
