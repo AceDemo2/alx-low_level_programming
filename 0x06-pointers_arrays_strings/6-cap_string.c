@@ -20,8 +20,13 @@ char *cap_string(char *s)
 				s++;
 				if (*s && *s >= 'a' && *s <= 'z')
 				{
-					*s -=32;
+					*s -= 32;
 					break;
+				}
+				else
+				{
+					while (*s != '\0' && *s == *p)
+						p2++;	
 				}
 			}
 			p2++;
