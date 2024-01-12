@@ -11,7 +11,9 @@ char *leet(char *s)
 	
 	while (*s)
 	{
-		while (*s3)
+		s3 = b;
+		s2 = a;
+		while (*s3 && *s2)
 		{
 			if (*s == *s3)
 				*s = *s2;
