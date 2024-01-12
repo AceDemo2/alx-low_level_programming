@@ -24,30 +24,10 @@ char *cap_string(char *s)
             /* Check for a separator */
             if (*s == *p2)
             {
-                s++;
-
-                /* Check for consecutive separators */
-                p3 = separators;
-                while (*s && *p3)
-                {
-                    if (*s == *p3)
-                    {
-                        s++;
-                        p3++;
-                    }
-                    else
-                    {
-                        break;  /* Exit inner loop if the character is not a separator */
-                    }
-                }
-
                 /* Check if the next character is a lowercase letter */
                 if (*s >= 'a' && *s <= 'z')
                     *s -= 32;
-
-                break;  /* Exit inner loop after processing a separator */
             }
-
             p2++;
         }
 
