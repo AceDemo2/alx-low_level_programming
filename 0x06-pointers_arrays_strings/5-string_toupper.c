@@ -10,7 +10,7 @@ char *string_toupper(char *n)
 
 	while (*n)
 	{
-		if (*n >= 'a' and *n <= 'z')
+		if (*n >= 'a' && *n <= 'z')
 			*n -= 32;
 		n++;
 	}
