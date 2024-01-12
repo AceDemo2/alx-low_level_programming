@@ -8,8 +8,7 @@
 char *cap_string(char *s)
 {
 	char separators[] = {' ', '\t', '\n', ',', ';', '.',
-		'!', '?', '"', '(', ')', '{', '}'};
-	char *p = s, *p2;
+		'!', '?', '"', '(', ')', '{', '}'}, *p = s, *p2;
 
 	/* Check if the first character is a lowercase letter */
 	if (*s >= 'a' && *s <= 'z')
