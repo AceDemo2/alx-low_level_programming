@@ -53,5 +53,5 @@ char *cap_string(char *s)
 
         s++; /* Move to the next character */
     }
-
     return p;
+}
