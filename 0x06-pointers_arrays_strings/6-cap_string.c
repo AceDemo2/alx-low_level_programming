@@ -7,7 +7,8 @@
  */
 char *cap_string(char *s)
 {
-	char separators[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char separators[] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 	char *p = s, *p2;
 
 	/* Check if the first character is a lowercase letter */
@@ -34,6 +35,6 @@ char *cap_string(char *s)
 		s++; /* Move to the next character */
 	}
 
-	return p;
+	return (p);
 }
 
