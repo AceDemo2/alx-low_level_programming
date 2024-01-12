@@ -28,7 +28,7 @@ char *cap_string(char *s)
                 s++;
 
                 /* Check for consecutive separators */
-                p3 = seperators;
+                p3 = separators;
 		while (*s && *p3)
                 {
 			if (*s = *p3)
