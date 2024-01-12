@@ -24,7 +24,7 @@ char *cap_string(char *s)
 			}
 			p2++;
 		}
-		*s++;
+		s++;
 	}
 	return (p);
 }
