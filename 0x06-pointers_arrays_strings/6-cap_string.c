@@ -18,7 +18,7 @@ char *cap_string(char *s)
 			if (*s == *p2)
 			{
 				s++;
-				if (*s >= 'a' && *s <= 'z')
+				if (*s && *s >= 'a' && *s <= 'z')
 					*s -=32;
 				break;
 			}
