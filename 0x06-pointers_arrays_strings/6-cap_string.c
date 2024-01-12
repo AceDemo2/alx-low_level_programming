@@ -28,12 +28,14 @@ char *cap_string(char *s)
                 s++;
 
                 /* Check for consecutive separators */
-                while (*s && (*s == ' ' || *s == '\t' || *s == '\n' ||
-                               *s == ',' || *s == ';' || *s == '.' ||
-                               *s == '!' || *s == '?' || *s == '"' ||
-                               *s == '(' || *s == ')' || *s == '{' || *s == '}'))
+                p3 = seperators;
+		while (*s && *p3)
                 {
-                    s++;
+			if (*s = *p3)
+			{
+                    		s++;
+				p3++;
+			}
                 }
 
                 /* Check if the next character is a lowercase letter */
