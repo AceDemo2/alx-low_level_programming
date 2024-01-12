@@ -8,20 +8,22 @@
 char *cap_string(char *s)
 {
 	char n[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-	char *p = s, *p2 = n;
+	char *p = s, *p2;
 
 	while (*s)
 	{
+		p2 = n;
 		while (*p2)
 		{
 			if (*s == *p2)
 			{
-				*s++ -= 32;
+				s++;
+				if (*s >= 'a' && *s <= 'z')
+					*s -=32;
 				break;
 			}
 			p2++;
 		}
-		p2 = n;
 		*s++;
 	}
 	return (p);
