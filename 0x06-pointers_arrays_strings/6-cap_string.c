@@ -8,7 +8,8 @@
 char *cap_string(char *s)
 {
 	char n[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'}
-	char *p = s, *p2 = n;
+	char *p = s;
+       	char *p2 = n;
 
 	while (*s)
 	{
