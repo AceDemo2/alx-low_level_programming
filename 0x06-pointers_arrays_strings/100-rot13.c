@@ -15,9 +15,10 @@ char *rot13(char *s)
 	while (s[i])
 	{
 		j = 0;
-		while (s[i] = a[j])
+		while (a[j])
 		{
-			s[i] = b[j];
+			if (s[i] == a[j])
+				s[i] = b[j]; 
 			j++;
 		}
 		i++;
