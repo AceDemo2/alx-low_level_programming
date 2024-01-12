@@ -37,7 +37,7 @@ char *cap_string(char *s)
                     }
                     else
                     {
-                        break;  /* Exit inner loop if the character is not a separator */
+                        continue;  /* Exit inner loop if the character is not a separator */
                     }
                 }
 
@@ -55,5 +55,3 @@ char *cap_string(char *s)
     }
 
     return p;
-}
-
