@@ -25,7 +25,7 @@ char *cap_string(char *s)
             if (*s == *p2)
             {
                 /* Check if the next character is a lowercase letter */
-                if (*s >= 'a' && *s <= 'z')
+                if (*(s + 1) >= 'a' && *(s + 1) <= 'z')
                     *s -= 32;
             }
             p2++;
