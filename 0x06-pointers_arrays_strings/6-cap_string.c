@@ -10,14 +10,13 @@ char *cap_string(char *s)
     char separators[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
     char *p = s, *p2, *p3;
 
-        /* Check if the first character is a lowercase letter */
-        if (*s >= 'a' && *s <= 'z')
-            *s -= 32;
+    /* Check if the first character is a lowercase letter */
+    if (*s >= 'a' && *s <= 'z')
+        *s -= 32;
 
     while (*s)
     {
         p2 = separators;
-
 
         /* Iterate through separators */
         while (*p2)
@@ -29,13 +28,17 @@ char *cap_string(char *s)
 
                 /* Check for consecutive separators */
                 p3 = separators;
-		while (*s && *p3)
+                while (*s && *p3)
                 {
-			if (*s = *p3)
-			{
-                    		s++;
-				p3++;
-			}
+                    if (*s == *p3)
+                    {
+                        s++;
+                        p3++;
+                    }
+                    else
+                    {
+                        break;  /* Exit inner loop if the character is not a separator */
+                    }
                 }
 
                 /* Check if the next character is a lowercase letter */
