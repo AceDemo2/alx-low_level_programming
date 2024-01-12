@@ -7,7 +7,7 @@
  */
 char *leet(char *s)
 {
-	char a[] = "4433007711", b[] = "aAeEoOtTlL";
+	char a[] = "4433007711", b[] = "aAeEoOtTlL", *s1 = s;
 	
 	while (*s)
 	{
@@ -20,4 +20,5 @@ char *leet(char *s)
 		}
 		s++;
 	}
+	return (s1);
 }
