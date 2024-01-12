@@ -12,28 +12,40 @@ char *cap_string(char *s)
 
     while (*s)
     {
-	    if (*s >= 'a' && *s <= 'z')
-            	*s -= 32;
         p2 = separators;
+
+        /* Check if the first character is a lowercase letter */
+        if (*s >= 'a' && *s <= 'z')
+            *s -= 32;
+
+        /* Iterate through separators */
         while (*p2)
         {
+            /* Check for a separator */
             if (*s == *p2)
             {
                 s++;
-                while (*s != '\0' && (*s == ' ' || *s == '\t' || *s == '\n' ||
-                                      *s == ',' || *s == ';' || *s == '.' ||
-                                      *s == '!' || *s == '?' || *s == '"' ||
-                                      *s == '(' || *s == ')' || *s == '{' || *s == '}'))
+
+                /* Check for consecutive separators */
+                while (*s && (*s == ' ' || *s == '\t' || *s == '\n' ||
+                               *s == ',' || *s == ';' || *s == '.' ||
+                               *s == '!' || *s == '?' || *s == '"' ||
+                               *s == '(' || *s == ')' || *s == '{' || *s == '}'))
+                {
                     s++;
+                }
+
+                /* Check if the next character is a lowercase letter */
                 if (*s >= 'a' && *s <= 'z')
-		{
-			*s -= 32;
-                	break;
-		}
+                    *s -= 32;
+
+                break;  /* Exit inner loop after processing a separator */
             }
+
             p2++;
         }
-        s++;
+
+        s++; /* Move to the next character */
     }
 
     return p;
