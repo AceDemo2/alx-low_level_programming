@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdint.h>
+#include <stdio.h>
 /**
  * infinite_add - adds two numbers
  * @n1: first number
@@ -33,7 +34,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	while (i >= 0 || j >= 0)
 	{
 		n = ((n3[i]) - '0' + (n4[j]) - '0');
-		if (n > 9 && n1[i - 1])
+		if (n > 9 && i > 0)
 			n3[i - 1] = ((n3[i - 1]) - '0') + 1;
 		n %= 10;
 		k = k * 10 + n;
@@ -50,7 +51,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	else
 	{
-		r = (char *)(intptr_t)k;
+		sprintf(r, "%d", k);
 		return (r);
 	}
 }
