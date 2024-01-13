@@ -12,7 +12,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0;
+	int i = 0, j = 0, k = 0, l = 0, n = 0;
 	char *n3, *n4, temp;
 
 	while (n1[i])
