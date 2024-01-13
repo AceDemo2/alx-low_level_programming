@@ -11,7 +11,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0, l, m = 0, n;
+	int i = 0, j = 0, k = 0, l, m = 0, n, temp, digits;
 
 	while (n1[i])
 		i++;
@@ -41,8 +41,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	else
 	{
-		int temp = k;
-        int digits = 0;
+		 temp = k;
+		 digits = 0;
 
         // Count the number of digits in temp
         while (temp > 0)
