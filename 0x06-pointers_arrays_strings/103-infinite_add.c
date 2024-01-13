@@ -11,7 +11,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0, l, m = 0;
+	int i = 0, j = 0, k = 0, l, m = 0, n;
 
 	while (n1[i])
 		i++;
@@ -39,6 +39,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	else
 	{
+		k = k - '0';
 		r = &k;
 		return(r);
 	}
