@@ -19,7 +19,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		j++;
 	i--;
 	j--;
-	while (i >= 0 && j >= 0)
+	while (i >= 0 || j >= 0)
 	{
 		n = ((n1[i]) - '0' + (n2[j]) - '0');
 		if (n > 9)
