@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdint.h>
 /**
  * infinite_add - adds two numbers
  * @n1: first number
@@ -41,7 +41,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		return (0);
 	else
 	{
-		r = (char *)k;
+		r = (char *)(intptr_t)k;
 		return (r);
 	}
 }
