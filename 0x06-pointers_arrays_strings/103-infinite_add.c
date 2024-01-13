@@ -5,42 +5,53 @@
  * infinite_add - adds two numbers
  * @n1: first number
  * @n2: second number
- * @r: buffer to store the result
- * @size_r: size of the buffer
- * Return: pointer to the result
+ * @r: buffer for result
+ * @size_r: buffer size
+ *
+ * Return: address of r or 0
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-    int len1, len2, carry, sum, i, j;
+	int i, j, k, l, m, n;
+	char *n3, *n4;
 
-    len1 = 0;
-    while (n1[len1] != '\0')
-        len1++;
+	i = j = k = l = m = n = 0;
 
-    len2 = 0;
-    while (n2[len2] != '\0')
-        len2++;
+	while (n1[i])
+		i++;
+	while (n2[j])
+		j++;
 
-    if (size_r <= len1 + 1 || size_r <= len2 + 1)
-        return (0);
+	n3 = (i >= j) ? n1 : n2;
+	n4 = (i >= j) ? n2 : n1;
 
-    carry = 0;
-    for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--)
-    {
-        sum = carry;
+	i--;
+	j--;
 
-        if (i >= 0)
-            sum += n1[i] - '0';
-        if (j >= 0)
-            sum += n2[j] - '0';
+	while (i >= 0 || j >= 0)
+	{
+		n = ((n3[i] - '0') + (n4[j] - '0'));
+		if (n > 9 && i > 0)
+			n3[i - 1] = ((n3[i - 1] - '0') + 1) + '0';
+		n %= 10;
+		r[k++] = n + '0';
+		i--;
+		j--;
+	}
 
-        r[size_r - 1] = (sum % 10) + '0';
-        carry = sum / 10;
-        size_r--;
-    }
+	if (k >= size_r || m > size_r)
+		return (0);
 
-    if (size_r <= 0)
-        return (0);
+	r[k] = '\0';
 
-    return (r + size_r);
+	/* Reverse the result */
+	for (i = 0, l = k - 1; i < l; i++, l--)
+	{
+		char temp = r[i];
+		r[i] = r[l];
+		r[l] = temp;
+	}
+
+	return (r);
 }
+

@@ -15,6 +15,8 @@ void print_number(int n)
 		n1 = -n;
 		_putchar('-');
 	}
+	if (n == 0)
+		_putchar('0');
 	while (n1 / 10 != 0)
 		print_number(n1 / 10);
 	_putchar(n1 % 10);
