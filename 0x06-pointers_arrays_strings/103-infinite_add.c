@@ -45,7 +45,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		j--;
 	}
 	l = k;
-	while (l != 0)
+	while (l> 0)
 	{
 		l /= 10;
 		m++;
