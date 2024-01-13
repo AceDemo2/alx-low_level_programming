@@ -21,7 +21,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (i >= j)
 	{
 		n3 = n1;
-		n4 = n2
+		n4 = n2;
 	}
 	else
 	{
