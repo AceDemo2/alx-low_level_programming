@@ -27,14 +27,22 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		n = ((n3[i] - '0') + (n4[j] - '0'));
 		if (n > 9 && i > 0)
-			n3[i - 1] = ((n3[i - 1] - '0') + 1) + '0';
-		n %= 10;
-		r[k++] = n + '0';
+		{
+			if (k < size_r - 1)
+			{
+				n3[i - 1] = ((n3[i - 1] - '0') + 1) + '0';
+				n %= 10;
+			}
+			else
+				return (0);
+		}
+		if (k < size_r -1)
+			r[k++] = n + '0';
+		else
+			return (0);
 		i--;
 		j--;
 	}
-	if (k >= size_r || m > size_r)
-		return (0);
 	r[k] = '\0';
 	for (i = 0, l = k - 1; i < l; i++, l--)
 	{
@@ -44,3 +52,4 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	return (r);
 }
+
