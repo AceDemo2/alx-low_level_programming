@@ -22,7 +22,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		n = ((n1[i - 1]) - '0' + (n2[j - 1]) - '0');
 		if (n > 9)
 		{
-			n1[i - 1] += 1;
+			((n1[i - 1]) - '0') += 1;
 			n %= 10;
 		}
 		k = k * 10 + n;
