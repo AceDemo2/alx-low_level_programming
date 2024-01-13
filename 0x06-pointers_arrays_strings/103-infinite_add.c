@@ -36,7 +36,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			else
 				return (0);
 		}
-		if (k < size_r -1)
+		if (k < size_r - 1)
 			r[k++] = n + '0';
 		else
 			return (0);
@@ -52,4 +52,3 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	return (r);
 }
-
