@@ -43,22 +43,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		 temp = k;
 		 digits = 0;
-
-        // Count the number of digits in temp
         while (temp > 0)
         {
             temp /= 10;
             digits++;
         }
-
-        if (digits > size_r)  // Changed the condition to digits
+        if (digits > size_r) 
             return (0);
-
-        // Reset i and j
-        i = 0;
-        j = digits - 1;
-
-        // Convert each digit to a character and store in the result buffer
         while (j >= 0)
         {
             r[i] = (k % 10) + '0';
@@ -66,7 +57,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
             i++;
             j--;
         }
-
-        return r;
+        return (r);
     }
 }
