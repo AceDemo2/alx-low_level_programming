@@ -12,7 +12,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k = 0, l, m = 0, n;
+	int i = 0, j = 0, k = 0, l, m = 0, n, temp;
 	char *n3, *n4;
 
 	while (n1[i])
@@ -28,6 +28,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		n3 = n2;
 		n4 = n1;
+		temp = i;
+        	i = j;
+       		j = temp;
 	}
 	i--;
 	j--;
