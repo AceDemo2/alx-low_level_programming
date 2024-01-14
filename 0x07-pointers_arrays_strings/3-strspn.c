@@ -21,7 +21,6 @@ unsigned int _strspn(char *s, char *accept)
 			if (accept[j] == s[i])
 			{
 				k++;
-				break;
 			}
 			j++;
 		}
