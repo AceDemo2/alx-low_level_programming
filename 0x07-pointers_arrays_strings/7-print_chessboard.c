@@ -14,7 +14,7 @@ void print_chessboard(char (*a)[8])
 		while (a[i][j])
 		{
 			printf("%c", a[i][j]);
-			i++;
+			j++;
 		}
 		printf("\n");
 		j++;
