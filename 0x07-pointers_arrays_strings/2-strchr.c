@@ -13,6 +13,6 @@
 char *_strchr(char *s, char c)
 {
 	for(; *s; s++)
-		return ((*s == c) ? s : 0);
+		return ((*s == c) ? s : continue);
 	return ((*s == c) ? s : NULL);
 }
