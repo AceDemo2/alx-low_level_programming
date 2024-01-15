@@ -9,16 +9,15 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i = 0, j, k = 0, l = 0, s = size - 1;
+	int i = 0, k = 0, l = 0, s = size - 1;
 
 	while(i <= size && s >= 0)
 	{
 			
 		k += a[i];
 		i++;
-		l += a[s]
+		l += a[s];
 		s--;
 	}
-	printf("
+	printf("%d, %d", k, l);
 }
-
