@@ -10,7 +10,7 @@ int prime(int a, int b)
 	       return (0);
 	if (b == 1)
 		return (1);
-	return (a, b - 1);
+	return prime(a, b - 1);
 }
 /**
  * is_prime_number - states if number is prime
