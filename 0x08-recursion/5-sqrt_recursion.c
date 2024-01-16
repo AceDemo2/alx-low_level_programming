@@ -3,19 +3,24 @@
  * @n: integer to find sqrt of
  * Return: natural square root or -1
  */
-
 int _sqrt_recursion(int n)
 {
-	int i = 0, e;
-	
-	if (n < 0)
+    return find_sqrt(n, 1);
+}
+/**
+ * find_sqrt - helper function for recursive square root calculation
+ * @n: integer to find sqrt of
+ * @i: current guess
+ * Return: natural square root or -1
+ */
+int find_sqrt(int n, int i)
+{
+	if (n < 0 || (i * i) > n)
 		return (-1);
-	if (n == 0)
-		return (0);
-	e = 0.0000000001;
-	while (((i * i) - n) < e)
-	{
-		i = (i + n / i) * 0.5;
-	}
-	return (i);
+	if (n == 0 || n == 1)
+		return (1);
+	if (i * i == n)
+	       return (i);
+	i++;
+	return (find_sqrt_(i));
 }	
