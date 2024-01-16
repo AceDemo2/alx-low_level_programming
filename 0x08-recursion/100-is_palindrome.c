@@ -23,7 +23,7 @@ int pal(char *s, int i, int j)
 		return (1);
 	if (s[i] != s[j])
 		return (0);
-	return (s, i + 1, j - 1);
+	return (pal(s, i + 1, j - 1));
 }
 /**
  * is_palindrome - check if s is palindrome
