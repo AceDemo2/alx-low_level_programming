@@ -19,7 +19,7 @@ int len(char *s)
  */
 int pal(char *s, int i, int j)
 {
-	if (s[i] >= s[j])
+	if (i >= j)
 		return (1);
 	if (s[i] != s[j])
 		return (0);
