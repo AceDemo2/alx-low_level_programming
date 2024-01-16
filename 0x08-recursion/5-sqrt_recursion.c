@@ -6,7 +6,7 @@
 
 int _sqrt_recursion(int n)
 {
-	int i = 0;
+	int i = 0, e;
 	
 	if (n < 0)
 		return (-1);
@@ -15,7 +15,7 @@ int _sqrt_recursion(int n)
 	e = 0.0000000001;
 	while (((i * i) - n) < 0)
 	{
-		i = (i + n / i) * 0.5
+		i = (i + n / i) * 0.5;
 	}
 	return (i);
 }	
