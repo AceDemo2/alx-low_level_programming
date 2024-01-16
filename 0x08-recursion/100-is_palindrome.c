@@ -6,6 +6,7 @@
 int len(char *s)
 {
 	int i = 0;
+
 	if (s[i] == '\0')
 		return (0);
 	return (1 + len(&s[i + 1]));
@@ -34,6 +35,7 @@ int pal(char *s, int i, int j)
 int is_palindrome(char *s)
 {
 	int l, m;
+
 	l = len(s) - 1;
 	m = pal(s, 0, l);
 	return (m);
