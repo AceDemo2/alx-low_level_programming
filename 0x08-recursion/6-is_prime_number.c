@@ -18,4 +18,6 @@ int prime(int a, int b)
  * Return:int
  */
 int is_prime_number(int n)
-	return (n, n - 1);
+{
+	return (prime(n, n - 1));
+}
