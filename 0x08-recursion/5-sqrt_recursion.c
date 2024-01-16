@@ -1,3 +1,4 @@
+int find_sqrt(int n, int i);
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: integer to find sqrt of
