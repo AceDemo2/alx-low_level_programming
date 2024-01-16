@@ -6,7 +6,7 @@ int find_sqrt(int n, int i);
  */
 int _sqrt_recursion(int n)
 {
-    return find_sqrt(n, 1);
+    return (find_sqrt(n, 1));
 }
 /**
  * find_sqrt - helper function for recursive square root calculation
@@ -23,5 +23,5 @@ int find_sqrt(int n, int i)
 	if (i * i == n)
 	       return (i);
 	i++;
-	return (find_sqrt(i));
+	return (find_sqrt(n , i));
 }	
