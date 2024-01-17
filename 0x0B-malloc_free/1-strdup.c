@@ -9,12 +9,12 @@
  */
 char *_strdup(char *str)
 {
-	char *j = str, *i;
+	char *j = str, *i, *k;
 	int n = 0;
 
 	if (str == NULL)
 		return (NULL);
-	while(*j)
+	while (*j)
 	{
 		n++;
 		j++;
@@ -22,6 +22,7 @@ char *_strdup(char *str)
 	i = malloc(sizeof(char) * (n + 1));
 	if (i == NULL)
 		return (NULL);
+	k = i;
 	while (*str)
 	{
 		*i = *str;
@@ -29,5 +30,5 @@ char *_strdup(char *str)
 		str++;
 	}
 	*i = '\0';
-	return (i);
+	return (k);
 }
