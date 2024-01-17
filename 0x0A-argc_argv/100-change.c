@@ -12,7 +12,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int c = 0;
+	int c = 0, cents;
 	if (argc > 2)
 	{
 		printf("Error\n");
