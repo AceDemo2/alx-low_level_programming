@@ -40,6 +40,6 @@ int main(int argc, char *argv[])
 			c++;
 		}
 		printf("%d\n", c);
-		return (0);
 	}
+	return (0);
 }
