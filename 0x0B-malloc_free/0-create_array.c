@@ -8,9 +8,10 @@
  *
  * Return: pointer to the array (Success), NULL (Error)
  */
-char *create_array(unsigned int size, char c);
+char *create_array(unsigned int size, char c)
 {
-	char i[];
+	char *i;
+	int j = 0;
 
 	if (size == 0)
 		return (0);
