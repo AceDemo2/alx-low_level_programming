@@ -17,16 +17,17 @@ int main(int argc, char *argv[])
 		i = 1;
 		while (argv[i])
 		{
-			if (isdigit(atoi(argv[i])))
-			{
-				sum += atoi(argv[i]);
-				i++;
-			}
-			else
+			if (!isdigit(argv[i]))
 			{
 				printf("Error\n");
 				return (1);
 			}
+			else
+			{
+				sum += atoi(argv[i]);
+				i++;
+			}
+						}
 		}
 		printf("%d\n", sum);
 		return (0);
