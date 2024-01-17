@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-        int i, sum = 0;
+        int i, sum = 0, j;
 
         if (argc > 1)
         {
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
                                 	return (1);
                         	}
                 	}
-			if (arg[i][j] == '\0')
+			if (argv[i][j] == '\0')
 			{
 				sum += atoi(argv[i]);
 				i++;
