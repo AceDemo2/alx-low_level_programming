@@ -21,9 +21,9 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		a[i] = **av;
+		a[i] = *av;
 		i++;
-		*a++;
+		a++;
 	}
 	return (a);
 }
