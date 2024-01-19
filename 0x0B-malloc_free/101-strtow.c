@@ -1,8 +1,7 @@
-
 #include <stdlib.h>
 
 int is_space(char c) {
-    return c == ' ' || c == '\t' || c == '\n';  // You can add more space characters if needed
+    return (c == ' ');
 }
 
 int count_words(char *str) {
@@ -28,9 +27,6 @@ char **strtow(char *str) {
     }
 
     int num_words = count_words(str);
-    if (num_words == 0) {
-        return NULL;
-    }
 
     char **words = (char **)malloc((num_words + 1) * sizeof(char *));
     if (words == NULL) {
@@ -46,15 +42,12 @@ char **strtow(char *str) {
             if (in_word) {
                 words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
                 if (words[word_index] == NULL) {
-                    // Free the allocated memory on failure
                     for (int i = 0; i < word_index; i++) {
                         free(words[i]);
                     }
                     free(words);
                     return NULL;
                 }
-
-                // Copy the word to the array
                 for (int i = 0; i < word_length; i++) {
                     words[word_index][i] = *(str - word_length + i);
                 }
@@ -72,18 +65,14 @@ char **strtow(char *str) {
     }
 
     if (in_word) {
-        // Process the last word
         words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
         if (words[word_index] == NULL) {
-            // Free the allocated memory on failure
             for (int i = 0; i <= word_index; i++) {
                 free(words[i]);
             }
             free(words);
             return NULL;
         }
-
-        // Copy the last word to the array
         for (int i = 0; i < word_length; i++) {
             words[word_index][i] = *(str - word_length + i);
         }
@@ -92,10 +81,8 @@ char **strtow(char *str) {
         word_index++;
     }
 
-    words[word_index] = NULL;  // Set the last element to NULL
+    words[word_index] = NULL;
 
     return words;
 }
-
-
 
