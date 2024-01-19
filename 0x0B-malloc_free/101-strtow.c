@@ -1,97 +1,101 @@
-#include "main.h"
+
 #include <stdlib.h>
 
-void util(char **, char *);
-void create_word(char **, char *, int, int, int);
-
-/**
- * strtow - splits a string into words.
- * @str: the string
- *
- * Return: returns a pointer to an array of strings (words)
- */
-char **strtow(char *str)
-{
-	int i, flag, len;
-	char **words;
-
-	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
-		return (NULL);
-
-	i = flag = len = 0;
-	while (str[i])
-	{
-		if (flag == 0 && str[i] != ' ')
-			flag = 1;
-		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
-		{
-			flag = 0;
-			len++;
-		}
-		i++;
-	}
-
-	len += flag == 1 ? 1 : 0;
-	if (len == 0)
-		return (NULL);
-
-	words = (char **)malloc(sizeof(char *) * (len + 1));
-	if (words == NULL)
-		return (NULL);
-
-	util(words, str);
-	words[len] = NULL;
-	return (words);
+int is_space(char c) {
+    return c == ' ' || c == '\t' || c == '\n';  // You can add more space characters if needed
 }
 
-/**
- * util - a util function for fetching words into an array
- * @words: the strings array
- * @str: the string
- */
-void util(char **words, char *str)
-{
-	int i, j, start, flag;
+int count_words(char *str) {
+    int count = 0;
+    int in_word = 0;
 
-	i = j = flag = 0;
-	while (str[i])
-	{
-		if (flag == 0 && str[i] != ' ')
-		{
-			start = i;
-			flag = 1;
-		}
+    while (*str) {
+        if (is_space(*str)) {
+            in_word = 0;
+        } else if (!in_word) {
+            in_word = 1;
+            count++;
+        }
+        str++;
+    }
 
-		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
-		{
-			create_word(words, str, start, i, j);
-			j++;
-			flag = 0;
-		}
-
-		i++;
-	}
-
-	if (flag == 1)
-		create_word(words, str, start, i, j);
+    return count;
 }
 
-/**
- * create_word - creates a word and insert it into the array
- * @words: the array of strings
- * @str: the string
- * @start: the starting index of the word
- * @end: the stopping index of the word
- * @index: the index of the array to insert the word
- */
-void create_word(char **words, char *str, int start, int end, int index)
-{
-	int i, j;
+char **strtow(char *str) {
+    if (str == NULL || *str == '\0') {
+        return NULL;
+    }
 
-	i = end - start;
-	words[index] = (char *)malloc(sizeof(char) * (i + 1));
+    int num_words = count_words(str);
+    if (num_words == 0) {
+        return NULL;
+    }
 
-	for (j = 0; start < end; start++, j++)
-		words[index][j] = str[start];
-	words[index][j] = '\0';
+    char **words = (char **)malloc((num_words + 1) * sizeof(char *));
+    if (words == NULL) {
+        return NULL;
+    }
+
+    int word_index = 0;
+    int word_length = 0;
+    int in_word = 0;
+
+    while (*str) {
+        if (is_space(*str)) {
+            if (in_word) {
+                words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
+                if (words[word_index] == NULL) {
+                    // Free the allocated memory on failure
+                    for (int i = 0; i < word_index; i++) {
+                        free(words[i]);
+                    }
+                    free(words);
+                    return NULL;
+                }
+
+                // Copy the word to the array
+                for (int i = 0; i < word_length; i++) {
+                    words[word_index][i] = *(str - word_length + i);
+                }
+                words[word_index][word_length] = '\0';
+
+                word_index++;
+                word_length = 0;
+                in_word = 0;
+            }
+        } else {
+            word_length++;
+            in_word = 1;
+        }
+        str++;
+    }
+
+    if (in_word) {
+        // Process the last word
+        words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
+        if (words[word_index] == NULL) {
+            // Free the allocated memory on failure
+            for (int i = 0; i <= word_index; i++) {
+                free(words[i]);
+            }
+            free(words);
+            return NULL;
+        }
+
+        // Copy the last word to the array
+        for (int i = 0; i < word_length; i++) {
+            words[word_index][i] = *(str - word_length + i);
+        }
+        words[word_index][word_length] = '\0';
+
+        word_index++;
+    }
+
+    words[word_index] = NULL;  // Set the last element to NULL
+
+    return words;
 }
+
+
+
