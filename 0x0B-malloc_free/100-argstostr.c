@@ -21,9 +21,10 @@ char *argstostr(int ac, char **av)
 		while (av[i][j])
 		{
 			j++;
-			i++;
+			k++;
 		}
 		i++;
+		k++;
 	}
 	a = malloc(sizeof(char) * (i + 1));
 	if (a == NULL)
