@@ -37,18 +37,20 @@ char **strtow(char *str) {
     int word_length = 0;
     int in_word = 0;
 
+    int i; 
+
     while (*str) {
         if (is_space(*str)) {
             if (in_word) {
                 words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
                 if (words[word_index] == NULL) {
-                    for (int i = 0; i < word_index; i++) {
+                    for (i = 0; i < word_index; i++) {
                         free(words[i]);
                     }
                     free(words);
                     return NULL;
                 }
-                for (int i = 0; i < word_length; i++) {
+                for (i = 0; i < word_length; i++) {
                     words[word_index][i] = *(str - word_length + i);
                 }
                 words[word_index][word_length] = '\0';
@@ -67,13 +69,14 @@ char **strtow(char *str) {
     if (in_word) {
         words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
         if (words[word_index] == NULL) {
-            for (int i = 0; i <= word_index; i++) {
+            for (i = 0; i <= word_index; i++) {
                 free(words[i]);
             }
             free(words);
             return NULL;
         }
-        for (int i = 0; i < word_length; i++) {
+
+        for (i = 0; i < word_length; i++) {
             words[word_index][i] = *(str - word_length + i);
         }
         words[word_index][word_length] = '\0';
