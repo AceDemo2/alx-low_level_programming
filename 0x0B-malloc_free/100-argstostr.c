@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 	a = malloc(sizeof(char) * (i + 1));
 	if (a == NULL)
 		return (NULL);
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++, k++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 			a[k] = av[i][j];
