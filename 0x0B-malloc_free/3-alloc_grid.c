@@ -19,19 +19,19 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	while (i[j])
 	{
-		k = 0;
 		i[j] = malloc(sizeof(int) * width);
 		if (i[j] == NULL)
 		{
-			j = 0;
-			while (i[j])
+			k = 0;
+			while (i[k])
 			{
-				free(i[j]);
-				j++;
+				free(i[k]);
+				k++;
 			}					
 			free(i);		
 			return (NULL);
 		}
+		k = 0;
 		while (i[j][k])
 		{
 			i[j][k] = 0;
