@@ -11,13 +11,13 @@
 */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k;
+	int i = 0, j, k;
 	char *a;
 	
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	while (av[i])
-	{
+	{	j = 0;
 		while (av[i][j])
 			i++;
 		i++;
