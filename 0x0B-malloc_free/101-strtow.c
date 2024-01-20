@@ -27,8 +27,9 @@ char **strtow(char *str) {
 	 int word_index;
 	 int word_length;
 	 int in_word;
-	 int i;
-	 if (str == NULL || (*str == '\0' && *(str + 1) == '\0')) {
+	 int i, j;
+	 j = count_words(*str);
+	 if (str == NULL || j == 0)) {
 	 return NULL;
     }
 
