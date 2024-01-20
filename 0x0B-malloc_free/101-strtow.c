@@ -28,7 +28,8 @@ char **strtow(char *str) {
 	 int word_length;
 	 int in_word;
 	 int i;
-	 if (str == NULL || *str == '\0') {
+	 in_word;
+	 if (str == NULL || *str == '\0' || (strlen(str) == 1 && is_space(*str))){
         return NULL;
     }
 
