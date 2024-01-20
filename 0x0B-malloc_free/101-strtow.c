@@ -52,7 +52,7 @@ char **strtow(char *str)
 	int word_index;
 	int word_length;
 	int in_word;
-	int i, j;
+	int i;
 
 	num_words = count_words(str);
 
