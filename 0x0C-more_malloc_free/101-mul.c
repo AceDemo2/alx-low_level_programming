@@ -2,13 +2,13 @@
 
 /**
  * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
+ * @ac: n arguments
+ * @av: args
  * Return: int
  */
 int main(int ac, char **av)
 {
-	unsigned long mul;
+	unsigned long long mul;
 	int i = 1, j;
 
 	if (ac != 3)
@@ -31,6 +31,6 @@ int main(int ac, char **av)
 		i++;
 	}
 	mul = atol(av[1]) * atol(av[2]);
-	printf("%lu\n", mul);
+	printf("%llu\n", mul);
 	return (0);
 }
