@@ -23,7 +23,7 @@ int *array_range(int min, int max)
 	a = malloc(sizeof(int) * (i + 1));
 	if (a == NULL)
 		return (NULL);
-	while (j < i)
+	while (j <= i)
 	{
 		a[j] = k;
 		j++;
