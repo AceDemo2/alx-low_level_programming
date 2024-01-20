@@ -27,13 +27,12 @@ char **strtow(char *str) {
 	 int word_index;
 	 int word_length;
 	 int in_word;
-	 int i, j;
-	 j = count_words(str);
-	 if (str == NULL || j == 0) {
+	 int i;
+    num_words = count_words(str);
+	 if (str == NULL || num_words == 0) {
 	 return NULL;
     }
 
-    num_words = count_words(str);
 
     words = (char **)malloc((num_words + 1) * sizeof(char *));
     if (words == NULL) {
@@ -69,25 +68,6 @@ char **strtow(char *str) {
         }
         str++;
     }
-
-    if (in_word) {
-        words[word_index] = (char *)malloc((word_length + 1) * sizeof(char));
-        if (words[word_index] == NULL) {
-            for (i = 0; i <= word_index; i++) {
-                free(words[i]);
-            }
-            free(words);
-            return NULL;
-        }
-
-        for (i = 0; i < word_length; i++) {
-            words[word_index][i] = *(str - word_length + i);
-        }
-        words[word_index][word_length] = '\0';
-
-        word_index++;
-    }
-
     words[word_index] = NULL;
 
     return words;
