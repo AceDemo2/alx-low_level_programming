@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	unsigned long long mul;
+	unsigned long mul;
 	int i = 1, j;
 
 	if (ac != 3)
@@ -31,6 +31,6 @@ int main(int ac, char **av)
 		i++;
 	}
 	mul = atol(av[1]) * atol(av[2]);
-	printf("%llu\n", mul);
+	printf("%lu\n", mul);
 	return (0);
 }
