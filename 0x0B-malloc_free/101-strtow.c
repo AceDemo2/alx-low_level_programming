@@ -28,7 +28,7 @@ char **strtow(char *str) {
 	 int word_length;
 	 int in_word;
 	 int i;
-	 if (str == NULL || *str == "") {
+	 if (str == NULL || str == "") {
         return NULL;
     }
 
