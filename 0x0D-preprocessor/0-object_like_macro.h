@@ -1,3 +1,4 @@
 #ifndef HEADER
-#define size 1024
+#define HEADER
+size 1024
 #endif
