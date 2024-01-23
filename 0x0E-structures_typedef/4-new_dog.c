@@ -1,3 +1,4 @@
+
 #include <stdlib.h>
 #include "dog.h"
 #include <string.h>
@@ -12,27 +13,31 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *i;
+    dog_t *i;
 
-	if (name == NULL || owner == NULL)
-		return (NULL);
-	i = malloc(sizeof(dog_t));
-	if (i == NULL)
-		return (NULL);
-	i->name = strdup(name);
-	if (i->name == NULL)
-	{
-		free(i);
-		return (NULL);
-	}
-	i->owner = strdup(owner);
-	if (i->owner == NULL)
-	{
-		free(i->name);
-		free(i);
-		return (NULL);
+    if (name == NULL || owner == NULL)
+        return NULL;
 
-	}
-	i->age = age;
-	return (i);
+    i = malloc(sizeof(dog_t));
+    if (i == NULL)
+        return NULL;
+
+    i->name = strdup(name);
+    if (i->name == NULL)
+    {
+        free(i); // Free the structure if name allocation fails
+        return NULL;
+    }
+
+    i->owner = strdup(owner);
+    if (i->owner == NULL)
+    {
+        free(i->name); // Free the name if owner allocation fails
+        free(i);       // Free the structure
+        return NULL;
+    }
+
+    i->age = age;
+    return i;
 }
+
