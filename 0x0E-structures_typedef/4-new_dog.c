@@ -25,15 +25,15 @@ dog_t *new_dog(char *name, float age, char *owner)
     i->name = strdup(name);
     if (i->name == NULL)
     {
-        free(i); // Free the structure if name allocation fails
+        free(i);
         return NULL;
     }
 
     i->owner = strdup(owner);
     if (i->owner == NULL)
     {
-        free(i->name); // Free the name if owner allocation fails
-        free(i);       // Free the structure
+        free(i->name);
+        free(i);
         return NULL;
     }
 
