@@ -23,7 +23,7 @@ int main(char ac, char *av[])
 		printf("Error\n");
 		exit(2);
 	}
-	while (j < atoi(av[1]) - 1)
+	while (j < atoi(av[1]))
 	{
 		printf("%02x ", i[j]);
 		j++;
