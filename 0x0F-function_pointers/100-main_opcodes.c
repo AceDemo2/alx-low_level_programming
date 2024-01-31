@@ -23,11 +23,11 @@ int main(char ac, char *av[])
 		printf("Error\n");
 		exit(2);
 	}
-	while (j < atoi(av[1]))
+	while (j < atoi(av[1]) - 1)
 	{
 		printf("%02x ", i[j]);
 		j++;
 	}
-	printf("%02x", i[j]);
+	printf("%02x\n", i[j]);
 	return (0);
 }
