@@ -25,9 +25,9 @@ int main(char ac, char *av[])
 	}
 	while (j < atoi(av[1]) - 1)
 	{
-		printf("%02x ", i[j]);
+		printf("%02x ", i[j] & 0xFF);
 		j++;
 	}
-	printf("%02x\n", i[j]);
+	printf("%02x\n", i[j] & 0xFF);
 	return (0);
 }
