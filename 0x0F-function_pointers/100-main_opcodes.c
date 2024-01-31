@@ -3,8 +3,8 @@
 
 /**
  * main - prints its own opcodes
- * @argc: number of arguments
- * @argv: array of arguments
+ * @ac: number of arguments
+ * @av: array of arguments
  *
  * Return: Always 0 (Success)
  */
@@ -22,8 +22,8 @@ int main(char ac, char *av[])
 	{
 		printf("Error\n");
 		exit(2);
-        }
-	while (j < atoi(av[1] - 1))
+	}
+	while (j < atoi(av[1]) - 1)
 	{
 		printf("%02x ", i[j]);
 		j++;
