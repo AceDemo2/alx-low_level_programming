@@ -8,7 +8,7 @@
  *
  * Return: Always 0 (Success)
  */
-int main(ac, *av[])
+int main(char ac, char *av[])
 {
 	char *i = main;
 
