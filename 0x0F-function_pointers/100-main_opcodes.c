@@ -10,7 +10,8 @@
  */
 int main(char ac, char *av[])
 {
-	char *i = main;
+	char *i = (char *) main;
+	int j = 0;
 
 	if (ac != 2)
 	{
