@@ -31,9 +31,8 @@ void print_all(const char * const format, ...)
 				{
 				j = va_arg(i, char *);
 				if (j == NULL)
-					printf("(nill)");
-				else
-					printf("%s", j);
+					j = "(nil)";
+				printf("%s", j);
 				break;
 				}
 			default:
