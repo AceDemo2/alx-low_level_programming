@@ -6,7 +6,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	const char *k = format,
+	const char *k = format;
 	char *j;
 	int l = 0; 
 	va_list i;
@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 		switch (*k)
 		{
 			case 'c':
-				printf("%c", va_arg(i, char));
+				printf("%c", va_arg(i, int));
 				break;
 			case 'i':
 				printf("%d", va_arg(i, int));
