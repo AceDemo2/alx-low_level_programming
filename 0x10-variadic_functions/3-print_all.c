@@ -15,9 +15,7 @@ void print_all(const char * const format, ...)
 
     while (k && *k)
     {
-        if (l > 0 && *k)
-            printf(", ");
-
+        
         switch (*k)
         {
             case 'c':
@@ -38,6 +36,9 @@ void print_all(const char * const format, ...)
             default:
                 break;
         }
+	if (l > 0 && *k)
+            printf(", ");
+
 
         k++;
         l++;
