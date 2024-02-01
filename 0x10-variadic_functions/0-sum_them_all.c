@@ -9,10 +9,10 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int j = 0, k = 0;
+	va_list i;
 
 	if (n == 0)
 		return (0);
-	va_list i;
 	va_start(i, n);
 	while (j < n)
 	{
