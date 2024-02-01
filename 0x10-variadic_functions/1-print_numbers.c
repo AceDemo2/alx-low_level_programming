@@ -9,10 +9,10 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned in j = 0;
+	unsigned int j = 0;
 	va_list(i);
 
-	if (seperator == NULL)
+	if (separator == NULL)
 		return;
 	va_start(i, n);
 	while (j < n - 1)
