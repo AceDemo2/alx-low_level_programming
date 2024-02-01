@@ -8,13 +8,13 @@ void print_all(const char * const format, ...)
 {
 	const char *k = format;
 	char *j;
-	int l = 0; 
+	int l = 0;
 	va_list i;
 
 	va_start(i, format);
 	while (*k)
 	{
-		if (l > 0)
+		if (l > 0 && *(k + 1))
 			printf(", ");
 		switch (*k)
 		{
