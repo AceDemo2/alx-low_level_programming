@@ -1,3 +1,12 @@
+#include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
+/**
+ * print_numbers - prints numbers & new line at the end
+ * @separator: string
+ * @n: number of elements
+ * Return: void
+ */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned in j = 0;
