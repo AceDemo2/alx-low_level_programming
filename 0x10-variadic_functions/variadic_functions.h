@@ -17,7 +17,7 @@ typedef struct p
 {
 	char *p;
 	void (*f)(va_list);
-}checker;
+} checker;
 
 void print_c(va_list);
 void print_i(va_list);
