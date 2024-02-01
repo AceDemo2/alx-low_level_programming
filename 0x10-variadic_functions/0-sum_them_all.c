@@ -20,4 +20,5 @@ int sum_them_all(const unsigned int n, ...)
 		j++;
 	}
 	va_end(i);
+	return (k);
 }
