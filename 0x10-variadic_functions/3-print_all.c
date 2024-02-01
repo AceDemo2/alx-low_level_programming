@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 
     while (k && *k)
     {
-        if (l > 0)
+        if (l > 0 && *k)
             printf(", ");
 
         switch (*k)
