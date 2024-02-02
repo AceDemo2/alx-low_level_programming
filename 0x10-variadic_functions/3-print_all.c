@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
                 break;
         }
 
-	if (l > 0 && (*k == c || *k == i || *k == f || *k == s) && *(k + 1))
+	if (l > 0 && (*k == 'c' || *k == 'i' || *k == 'f' || *k == 's') && *(k + 1))
             printf(", ");
 
         k++;
