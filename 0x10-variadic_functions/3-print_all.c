@@ -36,12 +36,13 @@ void print_all(const char * const format, ...)
             default:
                 break;
         }
-	if (l > 0 && *k)
-            printf(", ");
 
 
         k++;
-        l++;
+        l++;	
+	if (l > 0 && *(k + 1))
+            printf(", ");
+
     }
 
     va_end(i);
