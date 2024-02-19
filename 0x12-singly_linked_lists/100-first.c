@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * print - Apply the constructor attribute to myStartupFun() so that it
  *   is executed before main()
