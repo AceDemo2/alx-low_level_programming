@@ -13,7 +13,7 @@ void free_listint2(listint_t **head)
 		return;
 	while (*head)
 	{
-		i = *(head)->next;
+		i = (*head)->next;
 		free(*head);
 		*head = i;
 	}
