@@ -6,7 +6,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *i = *head, *j;
+	const listint_t *i = head, *j;
 	size_t k = 0, l;
 
 	if (head == NULL)
