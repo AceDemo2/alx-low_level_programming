@@ -8,7 +8,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *i;
-	size_t k = 0, l = sizeof(listint_t), m;
+	size_t k = 0;
 
 	if (h == NULL || *h == NULL)
 		return (k);
@@ -18,9 +18,8 @@ size_t free_listint_safe(listint_t **h)
 		free(*h);
 		*h = i;
 		k++;
-		m = sizeof(i);
-		if (l != m)
-			break;	
+		if (!i)
+			break;
 	}
 	*h = NULL;
 	return (k);
