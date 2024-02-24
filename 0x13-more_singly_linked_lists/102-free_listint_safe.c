@@ -39,13 +39,17 @@ size_t free_listint_safe(listint_t **h)
             temp->next = NULL;
 
             /* Continue freeing the rest of the list */
-            while (*h)
+            while (fast->next)
             {
-                temp = (*h)->next;
-                free(*h);
-                *h = temp;
+                temp = fast->next;
+                free(fast);
+                fast = temp;
                 count++;
             }
+
+            /* Free the last node in the list */
+            free(fast);
+            count++;
 
             /* Set the head to NULL to indicate the list is freed */
             *h = NULL;
