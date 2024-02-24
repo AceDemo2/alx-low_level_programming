@@ -10,7 +10,7 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *i = head, *j = head;
 
-	while (i)
+	while (i && i->next)
 	{
 		i = i->next->next;
 		j = j->next;
