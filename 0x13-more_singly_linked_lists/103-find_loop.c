@@ -22,7 +22,7 @@ listint_t *find_listint_loop(listint_t *head)
 				i = i->next;
 				j = j->next;
 			}
-			return (j)
+			return (j);
 		}
 	}
 	return (NULL);
