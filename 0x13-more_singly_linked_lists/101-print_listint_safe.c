@@ -9,8 +9,6 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *i = head, *j;
 	size_t k = 0, l;
 
-	if (head == NULL)
-		return (0);
 	while (i)
 	{
 		printf("[%p] %d\n", (void *)i, i->n);
@@ -28,6 +26,8 @@ size_t print_listint_safe(const listint_t *head)
 			j = j->next;
 			l++;
 		}
+	if (head == NULL)
+		exit(98);
 	}
 	return (k);
 }
