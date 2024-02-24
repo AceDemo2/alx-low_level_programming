@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (i == j)
 			{
-				printf("->[%p] %d\n", (void *)i, i->n);
+				printf("-> [%p] %d\n", (void *)i, i->n);
 				return (k);
 			}
 			j = j->next;
