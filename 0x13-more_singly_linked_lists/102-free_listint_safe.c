@@ -7,36 +7,36 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *i = *h, *j;
-	size_t k = 0, l;
+    listint_t *i, *j;
+    size_t k = 0, l;
 
-	if (h == NULL || *h == NULL)
-		return (k);
-	while (*h)
-	{
-		i = i->next;
-		k++;
-		j = *h;
-		l = 0;
-		while (l < k)
-		{
-			if (i == j)
-				break;
-			j = j->next;
-			l++;
-		}
-		if (i == j)
-			break;
-	}
-	l = 0;
-	i = *h;
-	while (l < k)
-	{
-		i = (*h)->next;
-		free(*h);
-		*h = i;
-		l++;
-	}
-	*h = NULL;
-	return (k);
+    if (h == NULL || *h == NULL)
+        return (k);
+
+    /* Detect the loop using two pointers */
+    while (*h)
+    {
+        i = (*h)->next;
+        k++;
+        j = *h;
+        l = 0;
+        while (l < k)
+        {
+            if (i == j)
+                break;
+            j = j->next;
+            l++;
+        }
+        if (i == j)
+            break;
+
+        free(*h);
+        *h = i;
+    }
+
+    /* Set the head to NULL after freeing */
+    *h = NULL;
+
+    return k;
 }
+
