@@ -9,8 +9,8 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *i;
 	size_t k = 0;
-	
-	if (*h == NULL)
+
+	if (h == NULL || *h === NULL)
 		return (k);
 	while (*h)
 	{
@@ -21,6 +21,5 @@ size_t free_listint_safe(listint_t **h)
 		if (!i)
 			break;
 	}
-	*h = NULL;
 	return (k);
 }
