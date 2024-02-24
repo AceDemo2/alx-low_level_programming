@@ -22,5 +22,6 @@ size_t free_listint_safe(listint_t **h)
 		if (l != m)
 			break;	
 	}
+	*h = NULL;
 	return (k);
 }
