@@ -7,45 +7,34 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-    listint_t *slow = *h, *fast = *h;
-    size_t nodes_freed = 0;
+	listint_t *i = *h, *j;
+	size_t k = 0, l;
 
-    /* Detect the loop using Floyd's algorithm */
-    while (fast && fast->next)
-    {
-        slow = slow->next;
-        fast = fast->next->next;
-
-        if (slow == fast)
-            break;
-    }
-
-    if (!fast || !fast->next)
-    {
-        /* No loop, simply free the list */
-        while (*h)
-        {
-            listint_t *temp = *h;
-            *h = temp->next;
-            free(temp);
-            nodes_freed++;
-        }
-    }
-    else
-    {
-        /* Loop detected, free the looped part */
-        slow = *h;
-        while (slow != fast)
-        {
-            listint_t *temp_slow = slow;
-            slow = slow->next;
-            free(temp_slow);
-            nodes_freed++;
-        }
-    }
-
-    *h = NULL; /* Set the head to NULL after freeing */
-
-    return nodes_freed;
+	if (h == NULL || *h == NULL)
+		return (k);
+	while (*i)
+	{
+		i = i->next;
+		k++;
+		j = *h;
+		l = 0;
+		while (l < k)
+		{
+			if (i == j)
+				break;
+			j = j->next;
+			l++;
+		}
+		if (i == j)
+			break;
+	}
+	l = 0;
+	while (l < k)
+	{
+		i = (*h)->next;
+		free(*h);
+		*h = i;
+		l++;
+	}
+	return (k);
 }
-
