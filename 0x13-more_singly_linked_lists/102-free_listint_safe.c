@@ -8,18 +8,17 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *i;
-	size_t k = 0;
+	size_t k = 0, l = sizeof(listint_t);
 
 	if (h == NULL || *h == NULL)
 		return (k);
 	while (*h)
 	{
-		i = ((*h)->next != NULL) ? (*h)->next : NULL;
+		i = (*h)->next;
 		free(*h);
 		*h = i;
 		k++;
-		if (i == NULL)
-			break;
+		(sizeof(i) == l) ? continue : break; 
 	}
 	return (k);
 }
