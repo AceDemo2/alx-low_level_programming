@@ -7,36 +7,32 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-    listint_t *i, *j;
-    size_t k = 0, l;
+    listint_t *current, *next;
+    size_t size = 0;
 
     if (h == NULL || *h == NULL)
-        return (k);
+        return (size);
 
-    /* Detect the loop using two pointers */
-    while (*h)
+    while (*h != NULL)
     {
-        i = (*h)->next;
-        k++;
-        j = *h;
-        l = 0;
-        while (l < k)
-        {
-            if (i == j)
-                break;
-            j = j->next;
-            l++;
-        }
-        if (i == j)
-            break;
+        size++;
+        current = *h;
+        *h = (*h)->next;
 
-        free(*h);
-        *h = i;
+        /* Check if the current node has been visited before */
+        if (current->next == current)
+        {
+            free(current);
+            break;
+        }
+
+        /* Mark the current node as visited */
+        current->next = current;
+
+        /* Free the current node */
+        free(current);
     }
 
-    /* Set the head to NULL after freeing */
-    *h = NULL;
-
-    return k;
+    return (size);
 }
 
