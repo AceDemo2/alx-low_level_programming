@@ -29,8 +29,8 @@ size_t free_listint_safe(listint_t **h)
 			break;
 	}
 	l = 0;
-	*h = i;
-	while (l < k)
+	i = *h;
+	while (l <= k)
 	{
 		i = (*h)->next;
 		free(*h);
