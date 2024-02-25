@@ -30,7 +30,7 @@ size_t free_listint_safe(listint_t **h)
 	}
 	l = 0;
 	*h = i;
-	while (l < k)
+	while (l < k - 1)
 	{
 		i = (*h)->next;
 		free(*h);
