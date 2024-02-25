@@ -12,7 +12,7 @@ size_t free_listint_safe(listint_t **h)
 
 	if (h == NULL || *h == NULL)
 		return (k);
-	while (*h)
+	while (i)
 	{
 		i = i->next;
 		k++;
