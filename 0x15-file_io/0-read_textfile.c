@@ -23,15 +23,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	r = fread(j, 1, letters, i);
-	fclose(i);
 	if (r == -1)
 	{
+		fclose(i);
 		free(j);
 		return (0);
 	}
 	w = write(1, j, letters);
 	if (w == -1)
+	{
+		fclose(i);
 		return (0);
+	}
+	
+	fclose(i);
 	free(j);
 	return (r);
 }
