@@ -4,7 +4,7 @@ void error(int a, char *b, int c)
 	if (a == 97)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	else if (a == 98)
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", b);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", b);
 	else if (a == 99)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", b);
 	else if (a == 100)
@@ -29,11 +29,11 @@ int main(int ac, char **av)
 	}
 	r = read(f1, buff, sizeof(buff));
 	if (r == -1)
-	{       
-                close(f1);
-                close(f2);
-                error(98, av[1], 0);
-        }
+	{
+		close(f1);
+		close(f2);
+		error(98, av[1], 0);
+	}
 	while (r > 0)
 	{
 		w = write(f2, buff, r);
