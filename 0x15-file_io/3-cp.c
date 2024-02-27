@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	f1 = open(av[1], O_RDONLY);
 	if (f1 == -1)
 		error(98, av[1], 0);
-	f2 = open(av[2], O_RDONLY | O_CREAT | O_TRUNC, 0664);
+	f2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (f2 == -1)
 	{
 		close(f1);
