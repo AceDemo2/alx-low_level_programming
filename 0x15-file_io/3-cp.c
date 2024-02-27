@@ -13,7 +13,7 @@ void error(int a, char *b, int c)
 }
 int main(int ac, char **av)
 {
-	int f1, f2, r, w, c1, c2;
+	int f1, f2, r = 1024, w, c1, c2;
 	char buff[1024];
 
 	if (ac != 3)
@@ -21,21 +21,21 @@ int main(int ac, char **av)
 	f1 = open(av[1], O_RDONLY);
 	if (f1 == -1)
 		error(98, av[1], 0);
-	f2 = open(av[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	f2 = open(av[2], O_RDONLY | O_CREAT | O_TRUNC, 0664);
 	if (f2 == -1)
 	{
 		close(f1);
 		error(99, av[2], 0);
 	}
-	r = read(f1, buff, sizeof(buff));
-	if (r == -1)
+	while (r == 1024)
 	{
-		close(f1);
-		close(f2);
-		error(98, av[1], 0);
-	}
-	while (r > 0)
-	{
+		r = read(f1, buff, sizeof(buff));
+		if (r == -1)
+		{
+			close(f1);
+			close(f2);
+			error(98, av[1], 0);
+		}
 		w = write(f2, buff, r);
 		if (w == -1 || w != r)
 		{
