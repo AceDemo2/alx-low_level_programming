@@ -32,15 +32,11 @@ int main(int ac, char **av)
 		r = read(f1, buff, sizeof(buff));
 		if (r == -1)
 		{
-			close(f1);
-			close(f2);
 			error(98, av[1], 0);
 		}
 		w = write(f2, buff, r);
 		if (w == -1 || w != r)
 		{
-			close(f1);
-			close(f2);
 			error(99, av[2], 0);
 		}
 	}
