@@ -1,4 +1,12 @@
 #include "main.h"
+/**
+ * error - prints an error message to stderr
+ * @code: error code
+ * @file: file name
+ *
+ * Description: Prints error messages to the POSIX standard error based on the
+ * provided error code and file name.
+ */
 void error(int a, char *b, int c)
 {
 	if (a == 97)
@@ -11,6 +19,19 @@ void error(int a, char *b, int c)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", c);
 	exit(a);
 }
+/**
+ * main - copies the content of a file to another file
+ * @ac: number of arguments passed to the program
+ * @av: array of arguments
+ *
+ * Return: 0 on success, appropriate error code on failure
+ *
+ * Description: The main function copies the content of a file specified by the
+ * file_from argument to a new file specified by the file_to argument. It reads
+ * the file_from in chunks of BUF_SIZE bytes and writes them to file_to. It
+ * performs error checking and prints appropriate error messages to the POSIX
+ * standard error based on different failure scenarios.
+ */
 int main(int ac, char **av)
 {
 	int f1, f2, r = 1024, w, c1, c2;
@@ -31,7 +52,7 @@ int main(int ac, char **av)
 	{
 		r = read(f1, buff, sizeof(buff));
 		if (r == -1)
-		{	
+		{
 			close(f1);
 			close(f2);
 			error(98, av[1], 0);
