@@ -1,8 +1,9 @@
 #include "main.h"
 /**
  * error - prints an error message to stderr
- * @code: error code
- * @file: file name
+ * @a: error code
+ * @b: file name
+ * @c: int file
  *
  * Description: Prints error messages to the POSIX standard error based on the
  * provided error code and file name.
